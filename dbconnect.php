@@ -8,7 +8,7 @@ if (file_exists(__DIR__."/.env"))
 }
 
 try {
-    $conn = new PDO("mysql:host=localhost;dbname=" . $_ENV('dbname'), $_ENV('dbuser'), '');
+    $conn = new PDO("mysql:host=localhost;dbname=events", "mysql", '');
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
