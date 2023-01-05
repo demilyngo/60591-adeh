@@ -5,7 +5,11 @@
     <title>События</title>
 </head>
 <body>
-    <p>tetetetetetet</p>
-    <p><?php $result->fetch()?></p>
+    <p>Игрок - вид спорта</p>
+    <?php while($item = $sports->fetch()) {?>
+        <li>
+            <?=$item['name'] . " - " . $item['sport']?>
+        </li>
+    <?php }?>
 </body>
 </html>
