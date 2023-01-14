@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>События</title>
-</head>
-<body>
-    <p>Игрок - вид спорта</p>
-    <?php while($item = $sports->fetch()) {?>
-        <li>
-            <?=$item['name'] . " - " . $item['sport']?>
-        </li>
-    <?php }?>
-</body>
-</html>
+<section>
+    <a href="../competitions.php">Список соревнований</a>
+    <a href="../players.php">Список игроков</a>
+    <a href="../registerCompetition.php">Зарегистрировать соревнование</a>
+</section>
