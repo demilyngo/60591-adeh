@@ -10,6 +10,8 @@ if($_SESSION['username']) {
     $row = $competition->fetch();
     
     switch ($row['Sport_id']) {
+        case 2:
+        case 3:
         case 1:
             $teamCapacity = 5;
             break;
