@@ -1,19 +1,20 @@
-<section class="form">
-    <div class="container">
-        <h1 class="catalog-title">Вход в систему</h1>
-        <form method="post" action="../index.php">
-            <p>
-                <label for="id1">Логин:</label>
-                <input type="text" name="login" id="id1">
+    <div class="container text-center">
+        <main class="form-signin w-50 m-auto">
+            <form method="post" action="../index.php">
+                <h1 class="h3 mb-3 fw-normal">Вход в систему</h1>
 
-            </p>
-            <p>
-                <label for="id2">Пароль:</label>
-                <input type="password" name="password" id="id2">
-            </p>
-            <p>
+                <div class="form-floating mb-2">
+                    <input type="text" name="login" id="login" class="form-control" placeholder="Логин">
+                    <label for="login" class="text-black">Логин</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Пароль">
+                    <label for="password" class="text-black">Пароль</label>
+                </div>
 
-            <p><input type="submit" value="Войти"></p>
-        </form>
+                <p><input type="submit" value="Войти" class="btn btn-lg btn-light"></p>
+            </form>
+            <a href="../registration.php"><button class="btn btn-lg btn-warning">Регистрация</button></a>
+        </main>
     </div>
-</section>
+

@@ -8,7 +8,7 @@ if ($_POST['login']){
         if (($_POST['password']) == $row['password']){
             $_SESSION['username'] = $_POST['login'];
             $_SESSION['id_auth_user'] = $row['id'];
-            $_SESSION['admin'] = $row['isAdmin'];
+            $_SESSION['role'] = $row['role'];
         }
         else{
             $message = 'Неверный пароль';
