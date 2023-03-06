@@ -10,3 +10,7 @@ footer {
     bottom: 0;
     height: 100px;
 }
+
+.main {
+    margin: 0 auto;
+}

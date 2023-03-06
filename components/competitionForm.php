@@ -22,6 +22,12 @@
                 <label for="description" class="text-black">Описание:</label>
             </div>
 
+            <div class="mb-2">
+                <label>
+                    Изображение: <input type="file" name="filename">
+                </label>
+            </div>
+
             <input type="submit" value="Создать" class="btn btn-lg btn-warning">
         </form>
     </div>

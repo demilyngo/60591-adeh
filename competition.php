@@ -13,9 +13,7 @@ if ($_POST['delete']) {
     $conn->query("DELETE FROM players WHERE players.team_id=".$GLOBALS['teamDelete']);
 }
 
-$teams = $conn->query("SELECT DISTINCT teams.id, teams.Name, teams.leader_id FROM competitions, games, teams 
-                        WHERE (teams.id = games.team_id_1 OR teams.id = games.team_id_2) AND 
-                        games.competition_id=".$id);
+//$teams = $conn->query("SELECT * FROM teams WHERE teams.competition_id =".$id);
 
-
+$games = $conn->query("SELECT * FROM games WHERE games.competition_id =".$id);
 require('components/competitionItem.php');
