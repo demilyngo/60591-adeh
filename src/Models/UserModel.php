@@ -6,7 +6,7 @@ use Framework\MysqlModel;
 
 class UserModel extends MysqlModel
 {
-    protected $table="user";
+    protected static $table="user";
 //    public function index()
 //
 //    {

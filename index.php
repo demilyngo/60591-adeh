@@ -1,24 +1,81 @@
 <?php
 
-    use Framework\Request;
-    use Framework\Router;
-    use Framework\Application;
+use Dotenv\Dotenv;
+use Framework\Container;
 
-    date_default_timezone_set('Asia/Yekaterinburg');
-    if ( file_exists(dirname(__FILE__).'/vendor/autoload.php') ) {
-        require_once dirname(__FILE__).'/vendor/autoload.php';
-    }
+session_start(["use_strict_mode" => true]);
 
-    $request = new Request();
-    Application::init();
-    echo (new Router($request))->getContent();
-echo $_GET['path'];
-exit;
+date_default_timezone_set('Asia/Yekaterinburg');
+if ( file_exists(dirname(__FILE__).'/vendor/autoload.php') ) {
+    require_once dirname(__FILE__).'/vendor/autoload.php';
+}
+if (file_exists(".env"))
+{
+    $dotenv = Dotenv::createImmutable(__DIR__);
+    $dotenv->load(); //все параметры окружения помещаются в массив $_ENV
+    echo "Окружение загружено<p>";
+    // var_dump($_ENV);
+}
+else {
+    echo "Ошибка загрузки ENV<br>";
+}
+Container::getApp()->run();
 
-require('dbconnect.php');
-require('auth.php');
-require('components/header.php');
+
+exit();
 
 
-$competitions = $conn->query("SELECT * FROM competitions ORDER BY id DESC");
-require('components/main.php');
+
+
+
+
+//use Dotenv\Dotenv;
+//use Framework\Container;
+//
+//session_start(["use_strict_mode" => true]);
+//
+//date_default_timezone_set('Asia/Yekaterinburg');
+//if ( file_exists(dirname(__FILE__).'/vendor/autoload.php') ) {
+//    require_once dirname(__FILE__).'/vendor/autoload.php';
+//}
+//if (file_exists(".env"))
+//{
+//    $dotenv = Dotenv::createImmutable(__DIR__);
+//    $dotenv->load(); //все параметры окружения помещаются в массив $_ENV
+//    echo "Окружение загружено<p>";
+//    // var_dump($_ENV);
+//}
+//else {
+//    echo "Ошибка загрузки ENV<br>";
+//}
+//Container::getApp()->run();
+//
+//
+//exit();
+//
+//
+//
+//
+//
+//    use Framework\Request;
+//    use Framework\Router;
+//    use Framework\Application;
+//
+//    date_default_timezone_set('Asia/Yekaterinburg');
+//    if ( file_exists(dirname(__FILE__).'/vendor/autoload.php') ) {
+//        require_once dirname(__FILE__).'/vendor/autoload.php';
+//    }
+//
+//    $request = new Request();
+//    Application::init();
+//    echo (new Router($request))->getContent();
+//echo $_GET['path'];
+//exit;
+//
+//require('dbconnect.php');
+//require('auth.php');
+//require('components/header.php');
+//
+//
+//$competitions = $conn->query("SELECT * FROM competitions ORDER BY id DESC");
+//require('components/main.php');
