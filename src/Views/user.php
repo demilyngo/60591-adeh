@@ -8,27 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-<?php require 'src/Views/header.php'?>
+<?php require ('src/Views/header.php');?>
 <h1>Сведения о пользователе:</h1>
 <ul>
-    <?php foreach ($data['users'] as $user): ?>
-        <li>
-            <?=$user->firstName?>
-            <?=$user->lastName?>
-            <?php
-                switch($user->role) {
-                    case 1:
-                        echo " - Админ";
-                        break;
-                    case 2:
-                        echo " - Организатор";
-                        break;
-                    case 3:
-                        echo " - Участник";
-                        break;
-            }?>
-        </li>
-    <?php endforeach; ?>
+    <?=$data['user']->firstName?>
+    <?=$data['user']->lastName?><br>
+    <?php
+    switch($data['user']->role) {
+        case 1:
+            echo " - Админ";
+            break;
+        case 2:
+            echo " - Организатор";
+            break;
+        case 3:
+            echo " - Участник";
+            break;
+    }?>
 
 </ul>
 </body>

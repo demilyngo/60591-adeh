@@ -14,10 +14,10 @@ class AuthController extends Controller
         $password = $request->getPostParams()['password'];
 //        echo ($login.' '.$password);
         if (isset($login) and $login != '') {
-            $user = UserModel::getWhere('email', '=', $login)[0];
+            $user = UserModel::getWhere('login', '=', $login)[0];
             if ($user){
-                if (MD5($password) == $user->md5password){
-                    $_SESSION['login'] = $user->email;
+                if ($password == $user->password){
+                    $_SESSION['login'] = $user->login;
                     $_SESSION['firstname'] = $user->firstname;
                     $_SESSION['lastname'] = $user->lastname;
                     $_SESSION['id'] = $user->id;

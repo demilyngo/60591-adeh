@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php require 'src/Views/header.php'?>
+<?php require ('src/views/header.php');?>
 <h2>Главная страница</h2>
 <p>Даннные представления:</p>
 <?=var_dump($data)?>

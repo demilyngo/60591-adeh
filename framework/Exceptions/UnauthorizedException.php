@@ -6,7 +6,7 @@ class UnauthorizedException extends \Exception
 {
     public function __construct()
     {
-        $this->message = 'Unauthorized';
+        $this->message = 'Unauthorized exception';
         parent::__construct();
     }
 }
