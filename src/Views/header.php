@@ -4,20 +4,20 @@
     <a href="/logout">Выйти</a>
 <?php } else {?>
     <section class="form">
-        <div class="container">
-            <h1 class="catalog-title">Вход в систему</h1>
-            <form method="post" action="/login">
-                <p>
-                    <label for="id1">Логин:</label>
-                    <input type="text" name="login" id="id1">
-                </p>
-                <p>
-                    <label for="id2">Пароль:</label>
-                    <input type="password" name="password" id="id2">
-                </p>
-                <p>
-                <p><input type="submit" value="Войти"></p>
-            </form>
+        <div class="container text-center">
+            <main class="form-signin w-50 m-auto">
+                <form method="post" action="/login">
+                    <h1 class="h3 mb-3 fw-normal">Вход в систему</h1>
+                    <p>
+                        <input type="text" name="login" id="login" class="form-control" placeholder="Логин">
+                    </p>
+                    <p>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Пароль">
+                    </p>
+                    <p>
+                    <p><input type="submit" value="Войти"></p>
+                </form>
+            </main>
         </div>
     </section>
 <?php }
